@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main()
+{
+    int n,k,sum = 0, j=0;
+    long int i;
+    printf("Enter the nth perfect number required\n");
+    scanf("%d", &n);
+    for(i=19;i>0; i++)
+    {
+        k = i;
+        while (k>=1)
+        {
+            sum += k % 10;
+            k = k/10;
+        }
+        if ((sum == 10) && (++j == n))
+        {
+            printf("%dth perfect number is %ld \n",n,i);
+        }
+        sum = 0;
+    }
+}
